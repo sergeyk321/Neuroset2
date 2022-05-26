@@ -4,7 +4,7 @@ from psycopg2 import Error
 
 conn = psycopg2.connect(database="postgres",
                             user="postgres",
-                            password="1",
+                            password="123456",
                             host="localhost",
                             port="5432")
 cursor = conn.cursor()
