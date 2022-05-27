@@ -41,6 +41,8 @@ def video():
     return render_template('video.html')
 @app.route('/result', methods=['GET', 'POST'])
 def result():
+    if request.method == 'POST':
+        os.system('python database.py')
     return render_template('result.html')
 if __name__ == '__main__':
     app.secret_key = os.urandom(24)

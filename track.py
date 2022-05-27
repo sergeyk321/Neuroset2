@@ -215,7 +215,7 @@ def detect(opt):
                             with open(txt_path + '.txt', 'a') as f:
                                 f.write(('%g ' * 10 + '\n') % (frame_idx + 1, id, bbox_left,  # MOT format
                                                                bbox_top, bbox_w, bbox_h, -1, -1, -1, i))
-                                cursor.execute(f'INSERT INTO shema{X}.table{X} ("frame", "amount", "bbox_left", "bbox_top", "bbox_w", "bbox_h") VALUES (%s, %s, %s, %s, %s, %s);',
+                                cursor.execute(f'INSERT INTO shema{X}.table{X} ("frame", "id", "bbox_left", "bbox_top", "bbox_w", "bbox_h") VALUES (%s, %s, %s, %s, %s, %s);',
                                                     (int(frame_idx), int(id), int(bbox_left), int(bbox_top), int(bbox_w), int(bbox_h)))
                                 conn.commit()
 
@@ -270,7 +270,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--yolo_model', nargs='+', type=str, default='best_3.pt', help='model.pt path(s)')
     parser.add_argument('--deep_sort_model', type=str, default='osnet_x0_25')
-    parser.add_argument('--source', type=str, default='C:/Neuroset4/vvitt/static/uploads', help='source')  # file/folder, 0 for webcam
+    parser.add_argument('--source', type=str, default='C:/Neuroset4/vvitt/static/uploads/video.mp4', help='source')  # file/folder, 0 for webcam
     parser.add_argument('--output', type=str, default='result', help='output folder')  # output folder
     parser.add_argument('--imgsz', '--img', '--img-size', nargs='+', type=int, default=[640], help='inference size h,w')
     parser.add_argument('--conf-thres', type=float, default=0.5, help='object confidence threshold')
