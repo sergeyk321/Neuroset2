@@ -40,8 +40,8 @@ This repository contains a highly configurable two-stage-tracker that adjusts to
 
 2. Установите зависимости:
 
-'pip install -r requirements.txt'
+`pip install -r requirements.txt`
 
 3. Напишите в терминале:
  
-4. 'python app.py'
+`python app.py`
