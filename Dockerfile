@@ -1,14 +1,14 @@
 FROM python:latest
 
-RUN apt-get update
-RUN apt-get install ffmpeg libsm6 libxext6  -y
+RUN mkdir /app/
+
+WORKDIR /app/
 
 COPY . .
 
-RUN set -xe \
-&& apt-get update \
-&& apt-get install python3-pip
-RUN pip3 install --upgrade pip
-RUN pip3 install -r requirements.txt
+RUN apt-get update
+RUN apt-get install ffmpeg libsm6 libxext6  -y
+
+RUN pip install -r requirements.txt
 EXPOSE 80
-CMD ["flask", "run", "--host=0.0.0.0", "--port=80"]
+CMD ["python", "app.py", "docker"]
