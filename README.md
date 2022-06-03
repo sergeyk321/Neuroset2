@@ -45,3 +45,13 @@ This repository contains a highly configurable two-stage-tracker that adjusts to
 3. Напишите в терминале:
  
 `python app.py`
+
+## Результаты
+
+Находятся в папке /static/
+
+## Тесты
+
+Напишите в терминале:
+
+`python test_app.py`
