@@ -48,7 +48,7 @@ This repository contains a highly configurable two-stage-tracker that adjusts to
 
 ## Результаты
 
-Находятся в папке /static/
+Находятся в папке `/static/`
 
 ## Тесты
 
