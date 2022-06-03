@@ -7,7 +7,7 @@ flag = True
 
 conn = psycopg2.connect(database="postgres",    
                             user="postgres",
-                            password="1",
+                            password="123456",
                             host="localhost",
                             port="5432")
 cursor = conn.cursor()
@@ -35,4 +35,5 @@ finally:
         print(flag)
         cursor.close()
         conn.close()
+        print(f'Схема называется a{X}')
         print("Соединение с PostgreSQL закрыто")
